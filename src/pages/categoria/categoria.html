@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <page-menu [pagina]="tipo_categoria"></page-menu>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of items; let i = index" (click)="itemTapped($event, item)" detail-push>
+      <ion-avatar item-start>
+        <span>{{ i+1 }}</span>
+      </ion-avatar>
+      <h2>{{ item.categoria | uppercase }}</h2>
+      <p>{{ item.traduccion }}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

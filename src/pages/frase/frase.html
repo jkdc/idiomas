@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Frases
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of items">
+      <ion-avatar item-start>
+        <img [src]="item.picture.medium">
+      </ion-avatar>
+      <h2>{{ item.name.first | uppercase }}</h2>
+      <p>{{ item.email }}</p>
+    </ion-item>
+  </ion-list>
+</ion-content>

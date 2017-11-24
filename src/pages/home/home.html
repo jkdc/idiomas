@@ -1,14 +1,17 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+  <ion-navbar color="primary">
+    <page-menu></page-menu>
   </ion-navbar>
 </ion-header>
-
-<ion-content padding>
+<ion-content padding class="home">
   The world is your oyster.
   <p>
     If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
   </p>
+  <ion-list >
+    <ion-item  *ngFor="let item of listPage" (click)="itemTapped($event, item)" detail-push>
+      <span>{{item.title}}</span>
+    </ion-item>
+  </ion-list>
+
 </ion-content>

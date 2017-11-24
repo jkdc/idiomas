@@ -1,0 +1,25 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <page-menu [pagina]="tipo_categoria"></page-menu>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item-sliding *ngFor="let item of items; let i = index"  detail-push>
+      <ion-item>
+        <ion-avatar item-start>
+          <span>{{ i+1 }}</span>
+        </ion-avatar>
+        <h2>{{ item.ingles | uppercase }}</h2> <span>({{ item.pronunciacion }})</span>
+        <p><span>{{ item.castellano }}</span></p>
+      </ion-item>
+      <ion-item-options>
+        <button ion-button (click)="favorita(item)">Edit</button>
+        <button ion-button color="secondary"(click)="favorita(item)" >Favorita</button>
+        <button ion-button color="danger" (click)="dificial(item)">Dificil</button>
+      </ion-item-options>
+
+    </ion-item-sliding>
+  </ion-list>
+</ion-content>
